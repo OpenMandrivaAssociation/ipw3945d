@@ -1,6 +1,6 @@
 %define name ipw3945d
 %define version 1.7.22
-%define mdkrelease 3
+%define mdkrelease 4
 %define release %mkrel %{mdkrelease}
 
 # dont generate a debug package 
@@ -49,7 +49,7 @@ perl -pi -e 's,\B/sbin/%{name},/usr/sbin/%{name},' $RPM_BUILD_ROOT/%{_sbindir}/%
 
 install -d $RPM_BUILD_ROOT%{_sysconfdir}/modprobe.d
 cat > $RPM_BUILD_ROOT%{_sysconfdir}/modprobe.d/%{name} <<EOF
-install ipw3945 /sbin/modprobe --ignore-install ipw3945 ; /usr/sbin/ipw3945d-start
+install ipw3945 [ -w /var/run ] && /sbin/modprobe --ignore-install ipw3945 && /usr/sbin/ipw3945d-start
 remove  ipw3945 /usr/sbin/ipw3945d-stop ; /sbin/modprobe -r --ignore-remove ipw3945
 EOF
 
