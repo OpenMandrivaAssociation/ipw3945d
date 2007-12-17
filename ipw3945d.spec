@@ -17,7 +17,6 @@ Patch0:		ipw3945d-1.7.22-net.patch
 License:	proprietary
 Url:		http://sourceforge.net/projects/ipw3945
 Group:		System/Kernel and hardware
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 Prefix:		%{_prefix}
 Requires:	drakxtools >= 10-34.2mdk
 Requires(preun):	rpm-helper
