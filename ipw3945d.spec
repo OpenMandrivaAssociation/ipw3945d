@@ -1,6 +1,6 @@
 %define name ipw3945d
 %define version 1.7.22
-%define mdkrelease 4
+%define mdkrelease 5
 %define release %mkrel %{mdkrelease}
 
 # dont generate a debug package 
